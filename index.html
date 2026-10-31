@@ -320,6 +320,9 @@ p { margin: 0 0 0.9em; max-width: 65ch; text-wrap: pretty; }
 }
 .window picture { display: block; margin: 0; line-height: 0; }
 .window img { width: 100%; height: auto; }
+.window video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #17142A; }
+.film { display: grid; gap: clamp(20px, 3vw, 32px); }
+.film h2 { margin: 0; }
 .chrome {
   display: flex;
   align-items: center;
@@ -543,7 +546,7 @@ details p { margin: 0.7rem 0 0.3rem; color: var(--muted); }
       Airbench
     </a>
     <nav class="nav-links" aria-label="On this page">
-      <a href="#memory">Memory</a>
+      <a href="#watch">Watch</a> <a href="#memory">Memory</a>
       <a href="#tabs">Tabs</a>
       <a href="#storage">Storage</a>
       <a href="#organise">Organise</a>
@@ -585,6 +588,19 @@ details p { margin: 0.7rem 0 0.3rem; color: var(--muted); }
           <canvas id="hero-puff" class="sprite" data-mood="calm" width="160" height="160" aria-hidden="true"></canvas>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="band" id="watch">
+    <div class="wrap film">
+      <h2>See it in 48 seconds.</h2>
+      <figure class="window">
+        <div class="chrome" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+        <video controls playsinline preload="none" poster="assets/airbench-launch-poster.jpg" width="1920" height="1080">
+          <source src="assets/airbench-launch.mp4" type="video/mp4">
+          <a href="assets/airbench-launch.mp4">Watch the Airbench video</a>
+        </video>
+      </figure>
     </div>
   </section>
 
