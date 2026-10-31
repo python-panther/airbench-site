@@ -418,6 +418,7 @@ p { margin: 0 0 0.9em; max-width: 65ch; text-wrap: pretty; }
 .panel h2 .mono { font-size: 0.72em; letter-spacing: 0; }
 .steps { margin: 0.2rem 0 1rem; padding-left: 1.2rem; max-width: 62ch; }
 .steps li { margin: 0.35rem 0; padding-left: 0.25rem; }
+.cmd { display: block; margin-top: 0.4rem; padding: 0.55rem 0.75rem; font-family: var(--mono); font-size: 0.82rem; line-height: 1.5; overflow-wrap: anywhere; user-select: all; border-radius: 8px; background: color-mix(in srgb, var(--ink, currentColor) 7%, transparent); }
 
 .faq { max-width: 44rem; }
 details { border-bottom: 1px solid var(--line); padding: 14px 0; }
@@ -728,9 +729,11 @@ details p { margin: 0.7rem 0 0.3rem; color: var(--muted); }
           <p class="fine">Free during the beta · macOS 13 or later · Apple silicon and Intel</p>
           <ol class="steps">
             <li>Unzip and drag Airbench to Applications.</li>
-            <li>Open it. macOS says it can't check the app because the beta isn't notarised yet. Click Done.</li>
-            <li>Open System Settings &gt; Privacy &amp; Security, click Open Anyway, then open Airbench again.</li>
+            <li>Open Terminal, paste this line and press Return:
+              <code class="cmd">xattr -dr com.apple.quarantine /Applications/Airbench.app</code></li>
+            <li>Open Airbench. From now on it opens like any other app.</li>
           </ol>
+          <p class="fine">The beta isn't signed by Apple yet, so macOS may call it "damaged". It isn't. The line above only removes the "downloaded from the internet" tag. If you already saw that message, click Cancel, not Move to Bin, then do step 2.</p>
           <p>Usage sharing is off unless you turn it on during setup.</p>
         </div>
       </div>
